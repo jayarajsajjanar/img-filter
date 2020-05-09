@@ -1,4 +1,4 @@
-import express, {Router, Request, Response} from 'express';
+import express from 'express';
 import bodyParser from 'body-parser';
 import {filterImageFromURL, deleteLocalFiles} from './util/util';
 
@@ -61,11 +61,6 @@ const urlExists = require("url-exists");
         res.send("try GET /filteredimage?image_url={{}}");
     });
 
-    app.get("/test/", async (req, res) => {
-        var q = req.query;
-        console.log(typeof q);
-        console.log(q);
-    });
     // Start the Server
     app.listen(port, () => {
         console.log(`server running http://localhost:${port}`);
